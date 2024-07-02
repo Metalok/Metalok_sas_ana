@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="{LOCALE}">
+<head>
+    <title>SAS Crown </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" id="metaViewport" content="user-scalable=no, initial-scale=1, width=device-width, viewport-fit=cover" data-tdv-general-scale="0.5"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <script src="lib/tdvplayer.js?v=1714123426852"></script>
+    <link rel="shortcut icon" href="favicon.ico?v=1714123426852">
+	<link rel="icon" sizes="48x48 32x32 16x16" href="favicon.ico?v=1714123426852">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="misc/icon180.png?v=1714123426852">
+	<link rel="icon" type="image/png" sizes="16x16" href="misc/icon16.png?v=1714123426852">
+	<link rel="icon" type="image/png" sizes="32x32" href="misc/icon32.png?v=1714123426852">
+	<link rel="icon" type="image/png" sizes="192x192" href="misc/icon192.png?v=1714123426852">
+	<link rel="manifest" href="manifest.json?v=1714123426852">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="msapplication-config" content="browserconfig.xml">
+	<link rel="preload" href="locale/en.txt?v=1714123426852" as="fetch" crossorigin="anonymous"/>
+	<link rel="preload" href="script.js?v=1714123426852" as="script"/>
+	<link rel="preload" href="media/panorama_312427EF_0AC1_FD49_4194_1C50D6EC0DF2_0/r/3/0_0.webp?v=1714123426852" as="image"/>
+	<link rel="preload" href="media/panorama_312427EF_0AC1_FD49_4194_1C50D6EC0DF2_0/l/3/0_0.webp?v=1714123426852" as="image"/>
+	<link rel="preload" href="media/panorama_312427EF_0AC1_FD49_4194_1C50D6EC0DF2_0/u/3/0_0.webp?v=1714123426852" as="image"/>
+	<link rel="preload" href="media/panorama_312427EF_0AC1_FD49_4194_1C50D6EC0DF2_0/d/3/0_0.webp?v=1714123426852" as="image"/>
+	<link rel="preload" href="media/panorama_312427EF_0AC1_FD49_4194_1C50D6EC0DF2_0/f/3/0_0.webp?v=1714123426852" as="image"/>
+	<link rel="preload" href="media/panorama_312427EF_0AC1_FD49_4194_1C50D6EC0DF2_0/b/3/0_0.webp?v=1714123426852" as="image"/>
+	<script src="https://remote.3dvista.com/lib/tdvremote.js?v=1714123426852" type="text/javascript"></script>
+	<script>  window.gaDataLayer = window.gaDataLayer || [];  function gtag(){gaDataLayer.push(arguments);}  window.gtag = gtag;  gtag("js", new Date());  gtag("config", "G-607W4GR01K", {"anonymize_ip":true});</script>
+	<meta name="description" content="Virtual Tour"/>
+	<meta name="theme-color" content="#000000"/>
+    <script src="script.js?v=1714123426852"></script>
+    <style type="text/css">
+        html, body { height:100%; width:100%; height:100vh; width:100vw; margin:0; padding:0; overflow:hidden; }
+        .fill-viewport { position:fixed; top:0; left:0; right:0; bottom:0; padding:0; margin:0; overflow: hidden; }
+        
+        #viewer { z-index:1; }
+        #preloadContainer { z-index:2; opacity:0; background-color:rgba(0,0,0,1); transition: opacity 0.5s; -webkit-transition: opacity 0.5s; -moz-transition: opacity 0.5s; -o-transition: opacity 0.5s;}
+      /* css added for login page */
+      #otpless-login-page {
+        position: fixed;
+        top: 50%;
+        transform: translate(0%, -50%);
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+      }
+      .fullscreen-div {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: transparent;
+        z-index: 100;
+      }
+    </style>
+    <link rel="stylesheet" href="fonts.css?v=1714123426852">
+
+	<!-- script added to authorise otpless -->
+	<script id="otpless-sdk" type="text/javascript" src="https://otpless.com/v2/auth.js" data-appid="I5Y3HN8PE6O9P2MJPYTG" ></script>
+</head>
+<body>
+    <div id="preloadContainer" class="fill-viewport"><div style="z-index: 4; position: absolute; overflow: hidden; display: flex; align-items: center; text-align: center; overflow: hidden; right: 0%; bottom: 0%; width: 100.00%; height: 99.92%" ><video id="video_9B205C35_B12F_4855_41CB_AC0A30623E48" width="100%" height="100%" autoplay  playsinline webkit-playsinline poster="media/video_9B205C35_B12F_4855_41CB_AC0A30623E48_poster_en.jpg" preload="auto"><source src="media/video_9B205C35_B12F_4855_41CB_AC0A30623E48_en.mp4" type="video/mp4">Your browser does not support the video tab</video></div></div>
+    <div id="viewer" class="fill-viewport"></div> 
+	
+	<!-- component for login page -->
+    <div class="fullscreen-div" id="fullscreen">
+      <div id="otpless-login-page"></div>
+    </div>
+
+    <!-- script added for login Page -->
+    <script type="text/javascript">
+		var otplessLoginPage = document.getElementById("otpless-login-page");
+		var fullscreen = document.getElementById("fullscreen");
+      function otpless(otplessUser) {
+          if (otplessUser?.status === "SUCCESS" && otplessLoginPage) {
+              otplessLoginPage.style.display = "none";
+              fullscreen.style.display = "none";
+          }
+      }
+    </script>
+</body>
+</html>
